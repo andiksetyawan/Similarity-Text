@@ -54,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       'Jakarta Selatan',
       'Jakarta Barat',
     ]);
+
     print(_hasil.bestMatch.target);
     //HASIL : 'Jakarta Selatan'
 
@@ -64,6 +65,24 @@ class _MyHomePageState extends State<MyHomePage> {
     ]);
      //HASIL : 'Kota Bandung'
     print(_hasil2.bestMatch.target);
+
+    var _hasil3 = StringSimilarity.findBestMatch('Jl. Asia Afrika No.61, Braga, Kec. Sumur Bandung, Kabupaten Bandung, Jawa Barat 40111', 
+    <String>[
+      'Kota Bandung',
+      'Kab. Bandung',
+    ]);
+     //HASIL : 'Kab. Bandung'
+    print(_hasil3.bestMatch.target);
+
+    var _hasil4 = StringSimilarity.findBestMatch('40111', 
+    <String>[
+      'Kota Bandung abc',
+      'Kab. Bandung abc',
+    ]);
+
+     print(_hasil4.bestMatch.target);
+     print(_hasil4.bestMatchIndex);
+    //  print(_hasil4.ratings);
 
 
 
