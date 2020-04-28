@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String _counter;
 
   void _incrementCounter() {
+
     var _hasil = StringSimilarity.findBestMatch('Jl. Sungai Sambas II No.20, RT.2/RW.5, Kramat Pela, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130', 
     <String>[
       'Jakarta Selatan',
@@ -55,9 +56,22 @@ class _MyHomePageState extends State<MyHomePage> {
     ]);
     print(_hasil.bestMatch.target);
     //HASIL : 'Jakarta Selatan'
+
+    var _hasil2 = StringSimilarity.findBestMatch('Jl. Asia Afrika No.61, Braga, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40111', 
+    <String>[
+      'Kota Bandung',
+      'Kab. Bandung',
+    ]);
+     //HASIL : 'Kota Bandung'
+    print(_hasil2.bestMatch.target);
+
+
+
     setState(() {
       _counter = _hasil.bestMatch.target;
     });
+
+
   }
 
   @override
